@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script src="http://challenge-bridge.heroku.com/bridge.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      var bridge = new Bridge({ endpoint: 'http://challenge-bridge.heroku.com' })
+      $(function() {
+        bridge.connect()
+        $('.trigger').click(function() {
+          $('#output').html("Requesting...")
+          bridge.request({ method: 'get', url: "/something.json" }).complete(function(data) {
+            $("#output").html("Got: <pre>" + data + "</pre>")
+          })
+        })
+      })
+    </script>
+    <style type="text/css" media="screen">
+      iframe { display: none; }
+    </style>
+  <body>
+    <a class="trigger">Click meh</a>
+    <div id="output">
+      Cross subdomain request output will appear here.
+    </div>
+  </body>
+</html>
+
