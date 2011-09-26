@@ -9,8 +9,8 @@
         $('.trigger a').click(function() {
           $('#output').html("Requesting...")
           var file = "something.json"
-          bridge.request({ method: 'get', url: "/" + file }).complete(function(data) {
-            $("#output").html("Requested:<br /><br /> http://challenge-bridge.heroku.com/"+file+"<br /><br />Got: <pre>" + data + "</pre>")
+          bridge.request({ method: 'get', url: "/" + file }).complete(function(response) {
+            $("#output").html("Requested:<br /><br /> http://challenge-bridge.heroku.com/"+file+"<br /><br />Got: <pre>" + response.data + "</pre>")
           })
         })
       })
