@@ -6,7 +6,7 @@
       var bridge = new Bridge({ endpoint: 'http://challenge-bridge.heroku.com' })
       $(function() {
         bridge.connect()
-        $('.trigger').click(function() {
+        $('.trigger a').click(function() {
           $('#output').html("Requesting...")
           bridge.request({ method: 'get', url: "/something.json" }).complete(function(data) {
             $("#output").html("Got: <pre>" + data + "</pre>")
@@ -14,8 +14,32 @@
         })
       })
     </script>
+    <style type="text/css" media="screen">
+      body {
+        font-family: Helvetica;
+        text-align: center;
+      }
+      .trigger {
+        padding: 20px;
+      }
+      .trigger a {
+        font-size: 24px;
+        cursor: pointer;
+      }
+      #output {
+        width: 500px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      #output pre {
+        text-align: right;
+      }
+    </style>
   <body>
-    <a class="trigger">Click meh</a>
+    <div class="trigger">
+      <a>Click meh</a>
+    </div>
     <div id="output">
       Cross subdomain request output will appear here.
     </div>
