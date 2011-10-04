@@ -10,8 +10,7 @@
         $('.trigger a').click(function() {
           $('#output').html("Requesting...")
           bridge.request({ method: 'get', url: "/api/secret.json" }).complete(function(data, response) {
-            console.log(response)
-            $("#output").html("Requested:<br /><br /> http://secretz.heroku.com/api/secret.json<br /><br />Got: <pre>" + data + "</pre>")
+            $("#output").html("Requested:<br /><br /> http://secretz.heroku.com/api/secret.json<br /><br />Got: <pre>" + response.data + "</pre>")
           })
         })
       })
