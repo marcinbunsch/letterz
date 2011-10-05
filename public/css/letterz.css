@@ -1,0 +1,41 @@
+@import url(http://fonts.googleapis.com/css?family=Leckerli+One|Short+Stack|Bangers|UnifrakturCook:700);
+
+body {
+  color: purple;
+  font-family: Helvetica;
+  text-align: center;
+}
+.trigger {
+  padding: 20px;
+}
+.trigger a {
+  font-size: 24px;
+  cursor: pointer;
+}
+#output {
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+#output pre {
+  text-align: left;
+}
+
+.logo {
+  margin-top: 20px;
+  background-image: url(/logo.gif);
+  height: 54px;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.workspace {
+  display: none;
+}
+
+.preview {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
