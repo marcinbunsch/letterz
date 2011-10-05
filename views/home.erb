@@ -24,7 +24,7 @@
             secret = data.secret
             preview()
           }).error(function(data, response) {
-            if (response.status == 403) {
+            if (response.status == 403 || response.status == 401) {
               $(".trigger").html("<a href='http://secretz.heroku.com'>You are not logged in to Secretz!\nGo to http://secretz.heroku.com to log in!</a>")
             }
           })
