@@ -20,7 +20,7 @@
       $(function() {
         bridge.connect()
         $('.trigger a').click(function() {
-          bridge.request({ method: 'get', url: "/api/secret.json" }).complete(function(data, response) {
+          bridge.request({ method: 'get', url: "/api/secret.json" }).success(function(data, response) {
             secret = data.secret
             preview()
           }).error(function(data, response) {
